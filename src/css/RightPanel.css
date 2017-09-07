@@ -1,0 +1,142 @@
+#right-panel-component {
+  width:80%;
+  float:left;
+  background:#f6fdff;
+  height:900px;
+}
+
+.right-panel-header {
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid #e0e6e8;
+  padding:5px 0;
+}
+
+.project-header {
+  box-shadow:0 1px 3px 0 rgba(0,0,0,0.15);
+  background:#fff;
+  text-align:center;
+  padding-top:8px;
+  padding-bottom:15px;
+}
+
+.project-header h1 {
+  margin-top:0;
+  margin-bottom:0;
+}
+
+/* Side List Buttons  */
+.side-list-btn-container {
+  position:relative;
+}
+
+.side-list-btn-container:hover {
+  background:linear-gradient(to right, #25e8c8, #32c1ff);
+}
+
+.side-list-btn-container button {
+  background:transparent;
+  border:none;
+  outline:none;
+  padding:10px 15px;
+  color:#fff;
+}
+
+.projet-option-delete-btn {
+  position:absolute;
+  right:0;
+}
+
+.list-container {
+  width:98%;
+  margin:auto;
+}
+
+.list-component {
+  width:300px;
+  float:left;
+  padding:5px;
+}
+
+.add-task-btn {
+  width:100%;
+  padding:5px 0;
+  margin:5px 0;
+  background:#fff;
+  color:#b7bfc6;
+  outline:none;
+  border:2px solid transparent;
+  border-radius:3px;
+  box-shadow:0 1px 3px 0 rgba(0,0,0,0.15);
+}
+
+.add-task-btn:hover {
+  box-shadow:0 0 0 2px #32c1ff;
+}
+.add-task-btn:hover i {
+  color:#32c1ff;
+}
+
+.task-component {
+  padding:2px 10px;
+  background:#fff;
+  border-radius:3px;
+  box-sizing: border-box;
+  margin-top:10px;
+  box-shadow:0 1px 3px 0 rgba(0,0,0,0.15);
+  position:relative;
+  min-height:100px;
+}
+
+.task-component:hover {
+  box-shadow:0 5px 10px 0 rgba(0,0,0, 0.1)
+}
+
+.editing-list-btns {
+  position:relative;
+}
+
+.right-chevron {
+  float:right;
+  font-size:.6em!important;
+  padding-right:10px;
+  color:#848f99;
+}
+
+.dropdown-button-btn-container {
+  background:#fff;
+  position:absolute;
+  z-index:10;
+  right:0;
+  border:1px solid #d5dce0;
+  box-shadow:0 5px 10px 0 rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  border-radius:3px;
+  padding:5px 0;
+  width:60%;
+}
+
+.dropdown-button-btn:hover {
+  background:linear-gradient(to right, #25e8c8, #32c1ff);
+  color:#fff;
+  cursor:pointer;
+}
+
+.dropdown-button-btn {
+  width:100%;
+  border:none;
+  padding:4px 0;
+  outline:none;
+  background:transparent;
+}
+
+.right-chevron:hover {
+  color:#14aaf5;
+  cursor:pointer;
+}
+
+.editing-task-options {
+  position:absolute;
+  right:5px;
+  top:10px;
+}
