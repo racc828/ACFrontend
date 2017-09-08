@@ -56,9 +56,10 @@ export default class ProjectsAdapter {
 
 
 let headers = () => {
+  const token = localStorage.getItem('token')
   return {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Authorization': `${localStorage.getItem('token')}`
+    'Authorization': `${token}`
   }
 }

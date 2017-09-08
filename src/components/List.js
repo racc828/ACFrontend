@@ -45,6 +45,12 @@ export default class List extends React.Component {
     })
   }
 
+  deleteList = (e) => {
+    e.preventDefault()
+    let list = this.props.list.id
+    this.props.deleteList(list)
+  }
+
   showEditList = () => this.setState({showEditList: !this.state.showEditList, editingDropdown: !this.state.editingDropdown})
 
   editingDropdown = () => this.setState({editingDropdown: !this.state.editingDropdown})
@@ -59,7 +65,7 @@ export default class List extends React.Component {
               <h3 className="list-title">{this.props.list.name} <i className="fa fa-chevron-down right-chevron" onClick={this.editingDropdown}></i></h3>
             </div>
             <div>{this.state.showEditList ?
-              <div><EditList showEditList={this.showEditList} name={this.props.list.name} listId={this.props.list.id} editList={this.editList}/></div> : null}
+              <div><EditList /></div> : null}
             </div>
             <div>{this.state.editingDropdown ?
                 <div className="dropdown-button-btn-container"><button className="dropdown-button-btn" onClick={this.deleteList}>

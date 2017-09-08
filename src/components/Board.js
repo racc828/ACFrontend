@@ -66,6 +66,13 @@ export default class Board extends React.Component {
    })
   }
 
+  deleteList = (list) => {
+    ListsAdapter.deleteList(list)
+    .then(data => {
+        console.log(data)
+    })
+  }
+
   getProject = (project) => {
     ProjectsAdapter.getProject(project)
     .then(project => {this.setState({
@@ -78,7 +85,7 @@ export default class Board extends React.Component {
     return(
       <div id="board-component">
         <LeftPanel currentUser={this.state.currentUser} projects={this.state.projects} createProject={this.createProject} deleteProject={this.deleteProject} getProject={this.getProject} />
-        <RightPanel currentUser={this.state.currentUser}  projects={this.state.projects} logOut={this.props.logOut} selectedProject={this.state.selectedProject} createList={this.createList} />
+        <RightPanel currentUser={this.state.currentUser}  projects={this.state.projects} logOut={this.props.logOut} selectedProject={this.state.selectedProject} createList={this.createList} deleteList={this.deleteList} />
       </div>
     )
   }
