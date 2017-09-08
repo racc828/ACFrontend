@@ -5,7 +5,7 @@ export default class EditList extends React.Component {
     super(props)
     this.state = {
       name: this.props.name,
-      id: this.props.listId
+      id: this.props.id
     }
   }
 

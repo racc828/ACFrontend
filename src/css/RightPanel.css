@@ -140,3 +140,8 @@
   right:5px;
   top:10px;
 }
+
+#submit-task-component input {
+  width:100%;
+  
+}

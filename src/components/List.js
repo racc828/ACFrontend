@@ -65,7 +65,7 @@ export default class List extends React.Component {
               <h3 className="list-title">{this.props.list.name} <i className="fa fa-chevron-down right-chevron" onClick={this.editingDropdown}></i></h3>
             </div>
             <div>{this.state.showEditList ?
-              <div><EditList /></div> : null}
+              <div><EditList name={this.props.list.name} editList={this.props.editList} id={this.props.list.id} /></div> : null}
             </div>
             <div>{this.state.editingDropdown ?
                 <div className="dropdown-button-btn-container"><button className="dropdown-button-btn" onClick={this.deleteList}>
@@ -80,7 +80,7 @@ export default class List extends React.Component {
           <button onClick={this.showAddTask} className="add-task-btn"><i className="fa fa-plus"></i></button>
         </div>
         <div className="submit-task-container">
-          {this.state.showAddTask ? <SubmitTask createTask={this.createTask}/> : null}
+          {this.state.showAddTask ? <SubmitTask createTask={this.createTask} showAddTask={this.showAddTask}/> : null}
         </div>
         <div className="tasks-container">
           {this.state.tasks.map((task, i) => {

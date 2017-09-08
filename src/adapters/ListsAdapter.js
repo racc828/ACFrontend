@@ -23,17 +23,16 @@ export default class ListsAdapter {
   }
 
 
-  // static editList(list, projectId) {
-  //   return fetch(`http://localhost:3000/api/v1/lists/${list.id}`, {
-  //     method: 'PATCH',
-  //     headers:headers(),
-  //     body: JSON.stringify({
-  //       name: `${list.name}`,
-  //       project_id: `${projectId}`
-  //     })
-  //   })
-  //   .then( resp => resp.json())
-  // }
+  static editList(list) {
+    return fetch(`http://localhost:3000/api/v1/lists/${list.id}`, {
+      method: 'PATCH',
+      headers:headers(),
+      body: JSON.stringify({
+        name: `${list.name}`,
+      })
+    })
+    .then( resp => resp.json())
+  }
 
   // static editListCoordinates(positionX, positionY, listId, projectId) {
   //   return fetch(`http://localhost:3000/api/v1/lists/${listId}`, {

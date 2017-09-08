@@ -54,6 +54,23 @@ export default class Board extends React.Component {
     }
   }
 
+  editProject = (project) => {
+    ProjectsAdapter.editProject(project)
+    .then( data => {
+       let index = this.state.projects.findIndex(projectState=> projectState.id === project.projectId)
+       this.setState({
+           projects: [
+            ...this.state.projects.slice(0,index),
+            Object.assign({}, this.state.projects[index], data),
+            ...this.state.projects.slice(index+1)
+          ]
+        });
+     })
+     .then (() => {
+       this.getProject(project.projectId)
+     })
+  }
+
   createList = (newList, projectId) => {
     ListsAdapter.createList(newList, projectId)
     .then(list => {
@@ -64,6 +81,23 @@ export default class Board extends React.Component {
        }
      })
    })
+  }
+
+  editList = (list) => {
+    ListsAdapter.editList(list)
+    .then( data => {
+        let index = this.state.selectedProject.lists.findIndex(stateList=> stateList.id === list.id)
+        this.setState({
+          selectedProject: {
+            ...this.state.selectedProject,
+              lists: [
+               ...this.state.selectedProject.lists.slice(0,index),
+               Object.assign({}, this.state.selectedProject.lists[index], data),
+               ...this.state.selectedProject.lists.slice(index+1)
+             ]
+           }
+         });
+      })
   }
 
   deleteList = (list) => {
@@ -85,7 +119,7 @@ export default class Board extends React.Component {
     return(
       <div id="board-component">
         <LeftPanel currentUser={this.state.currentUser} projects={this.state.projects} createProject={this.createProject} deleteProject={this.deleteProject} getProject={this.getProject} />
-        <RightPanel currentUser={this.state.currentUser}  projects={this.state.projects} logOut={this.props.logOut} selectedProject={this.state.selectedProject} createList={this.createList} deleteList={this.deleteList} />
+        <RightPanel currentUser={this.state.currentUser}  projects={this.state.projects} logOut={this.props.logOut} selectedProject={this.state.selectedProject} createList={this.createList} editList={this.editList} deleteList={this.deleteList} editProject={this.editProject} />
       </div>
     )
   }
