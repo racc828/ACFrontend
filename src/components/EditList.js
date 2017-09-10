@@ -21,6 +21,7 @@ export default class EditList extends React.Component {
     e.preventDefault()
     let list = this.state
     this.props.editList(list)
+    this.props.editingDropdowninEditList()
   }
 
 

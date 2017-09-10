@@ -30,6 +30,11 @@
   position:relative;
 }
 
+.project-option-btn {
+  width:100%;
+  text-align:left;
+}
+
 .side-list-btn-container:hover {
   background:linear-gradient(to right, #25e8c8, #32c1ff);
 }
@@ -141,7 +146,22 @@
   top:10px;
 }
 
+.task-component input {
+  width:100%;
+}
+
+#submit-project-form {
+  padding-left:14px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
 #submit-task-component input {
   width:100%;
-  
+}
+
+.submit-list {
+  width:98%;
+  margin:auto;
+  padding:10px 0;
 }

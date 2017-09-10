@@ -50,7 +50,9 @@ export default class Board extends React.Component {
       })
     })
     if (this.state.selectedProject.id === project) {
-      this.props.history.push('/')
+      this.setState({
+        selectedProject: null
+      })
     }
   }
 
@@ -103,7 +105,7 @@ export default class Board extends React.Component {
   deleteList = (list) => {
     ListsAdapter.deleteList(list)
     .then(data => {
-        console.log(data)
+        this.getProject(this.state.selectedProject.id)
     })
   }
 

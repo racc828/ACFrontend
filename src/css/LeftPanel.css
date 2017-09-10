@@ -4,4 +4,31 @@
   background:#222b37;
   min-height:900px;
   color:#fff;
+  position:relative;
+}
+
+.project-options-component {
+  margin-top:30px;
+}
+
+.active-btn {
+  border-left:3px solid #25e8c8!important;
+}
+
+.circle-btn {
+  background:linear-gradient(to top right, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
+  border-radius:12px;
+  outline:none;
+  border:none;
+  color:#fff;
+  height:21px;
+  width:21px;
+  position:absolute;
+  right:15px;
+  box-sizing:border-box;
+  display:flex;
+}
+
+.circle-btn:hover {
+  box-shadow:0 0 0 3px #fcbd01;
 }

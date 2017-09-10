@@ -5,12 +5,24 @@ import ProjectOptions from './ProjectOptions';
 
 export default class LeftPanel extends React.Component {
 
+  constructor() {
+    super()
+    this.state = {
+      showAddProject:false
+    }
+  }
+
+  showAddProject = () => this.setState({showAddProject: !this.state.showAddProject})
+
 
   render() {
     return(
       <div id="left-panel-component">
-        Hey {this.props.currentUser.firstname}
-        <SubmitProject createProject={this.props.createProject} />
+        {this.props.currentUser.firstname}
+        <button className="float-right add-project-btn circle-btn" onClick={this.showAddProject}>
+          <i className="fa fa-plus"></i>
+        </button>
+        {this.state.showAddProject ? <SubmitProject createProject={this.props.createProject} /> :null}
         <ProjectOptions projects={this.props.projects} getProject={this.props.getProject} deleteProject={this.props.deleteProject}/>
       </div>
     )

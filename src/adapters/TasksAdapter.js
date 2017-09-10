@@ -17,6 +17,17 @@ export default class TasksAdapter {
     .then( resp => resp.json())
   }
 
+  static editTaskCoordinates(positionX, positionY, taskId) {
+    return fetch(`http://localhost:3000/api/v1/tasks/${taskId}`, {
+      method: 'PATCH',
+      headers:headers(),
+      body: JSON.stringify({
+        positionY: `${positionY}`
+      })
+    })
+    .then( resp => resp.json())
+  }
+
   // static getTasks(listId) {
   //   return fetch(path, {
   //     headers: headers()
@@ -27,32 +38,28 @@ export default class TasksAdapter {
   //     })
   //   }
   //
-  //   static editTask(task, listId) {
-  //     return fetch(`http://localhost:3000/api/v1/tasks/${task.id}`, {
-  //       method: 'PATCH',
-  //       headers:headers(),
-  //       body: JSON.stringify({
-  //         title: `${task.title}`,
-  //         description: `${task.description}`,
-  //         list_id: `${listId}`
-  //       })
-  //     })
-  //     .then( resp => resp.json())
-  //   }
+    static editTask(task) {
+      return fetch(`http://localhost:3000/api/v1/tasks/${task.id}`, {
+        method: 'PATCH',
+        headers:headers(),
+        body: JSON.stringify({
+          name: `${task.name}`,
+          description: `${task.description}`
+        })
+      })
+      .then( resp => resp.json())
+    }
 
-    // static deleteTask(task, listId) {
-    //   return fetch(`http://localhost:3000/api/v1/tasks/${task}`, {
-    //     method: 'DELETE',
-    //     headers: headers(),
-    //     body: JSON.stringify({
-    //       list_id: `${listId}`,
-    //     })
-    //   })
-    //   .then( resp => resp.json())
-    //   .then( tasks => {
-    //     return tasks.filter((task) => task.list_id === listId)
-    //   })
-    // }
+  static deleteTask(taskId) {
+    return fetch(`http://localhost:3000/api/v1/tasks/${taskId}`, {
+        method: 'DELETE',
+        headers: headers(),
+        body: JSON.stringify({
+          id: `${taskId}`
+        })
+      })
+      .then( resp => resp.json())
+    }
 
   }
 

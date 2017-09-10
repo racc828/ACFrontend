@@ -34,18 +34,16 @@ export default class ListsAdapter {
     .then( resp => resp.json())
   }
 
-  // static editListCoordinates(positionX, positionY, listId, projectId) {
-  //   return fetch(`http://localhost:3000/api/v1/lists/${listId}`, {
-  //     method: 'PATCH',
-  //     headers:headers(),
-  //     body: JSON.stringify({
-  //       project_id: `${projectId}`,
-  //       positionX: `${positionX}`,
-  //       positionY: `${positionY}`
-  //     })
-  //   })
-  //   .then( resp => resp.json())
-  // }
+  static editListCoordinates(positionX, positionY, listId) {
+    return fetch(`http://localhost:3000/api/v1/lists/${listId}`, {
+      method: 'PATCH',
+      headers:headers(),
+      body: JSON.stringify({
+        positionX: `${positionX}`
+      })
+    })
+    .then( resp => resp.json())
+  }
 
   static deleteList(listId) {
     return fetch(`http://localhost:3000/api/v1/lists/${listId}`, {
