@@ -28,16 +28,6 @@ export default class TasksAdapter {
     .then( resp => resp.json())
   }
 
-  // static getTasks(listId) {
-  //   return fetch(path, {
-  //     headers: headers()
-  //   })
-  //     .then( resp => resp.json())
-  //     .then( tasks => {
-  //       return tasks
-  //     })
-  //   }
-  //
     static editTask(task) {
       return fetch(`http://localhost:3000/api/v1/tasks/${task.id}`, {
         method: 'PATCH',

@@ -13,6 +13,20 @@ export default class ProjectsAdapter {
     .then( resp => resp.json())
   }
 
+
+  static addUserToProject(userId, projectId) {
+    debugger
+    return fetch('http://localhost:3000/api/v1/projects/add_user',{
+      method: 'POST',
+      headers: headers(),
+      body: JSON.stringify({
+        id: projectId,
+        user_id: userId
+      })
+    })
+    .then( resp => resp.json())
+  }
+
   static getProjects(currentUser) {
     return fetch(path, {
       headers: headers()
@@ -28,7 +42,6 @@ export default class ProjectsAdapter {
   }
 
     static editProject(project) {
-      debugger
     return fetch(`http://localhost:3000/api/v1/projects/${project.projectId}`, {
       method: 'PATCH',
       headers:headers(),

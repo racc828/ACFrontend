@@ -12,7 +12,7 @@ export default class UsersAdapter {
     localStorage.setItem('token', user.jwt)
   }
 
-  static getUsers(currentUser) {
+  static getUsers() {
     return fetch(path, {
       method: 'get',
       headers: headers()

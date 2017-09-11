@@ -2,17 +2,32 @@ import React from 'react'
 import List from './List'
 import SubmitList from './SubmitList'
 import EditProject from './EditProject'
+import AddCollaborators from './AddCollaborators'
+import UsersAdapter from '../adapters/UsersAdapter'
+import ProjectsAdapter from '../adapters/ProjectsAdapter'
 
 export default class Project extends React.Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      showEditProjet: false
+      showEditProjet: false,
+      users: []
     }
   }
 
+  componentDidMount() {
+    UsersAdapter.getUsers()
+    .then(data => {this.setState({
+      users: data
+      })
+    })
+  }
+
+
+
   showEditProject = () => this.setState({showEditProject: !this.state.showEditProject})
+
 
   render(){
     return(
@@ -22,16 +37,24 @@ export default class Project extends React.Component {
           <button className="edit-project-btn" onClick={this.showEditProject}> <i className="fa fa-pencil"></i>
           </button>
         </h1>}
-
         </div>
+
         <div className="submit-list">
           <SubmitList createList={this.props.createList} selectedProject={this.props.selectedProject} editProject={this.props.editProject} />
+          <AddCollaborators addCollaborator={this.props.addCollaborator} users={this.state.users}/>
+          <div className="collaborators-container">
+            {this.props.selectedProject.users.map((user, i) => {
+              return <div key={i}>{user.firstname}</div>
+            })}
+          </div>
         </div>
+
         <div className="list-container">
           {this.props.selectedProject.lists.map((list, i) => {
             return <List list={list} key={i} deleteList={this.props.deleteList} editList={this.props.editList} />
           })}
         </div>
+
       </div>
     )
   }
