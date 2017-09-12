@@ -1,5 +1,6 @@
 import React from 'react'
 import List from './List'
+import Collaborator from './Collaborator'
 import SubmitList from './SubmitList'
 import EditProject from './EditProject'
 import AddCollaborators from './AddCollaborators'
@@ -44,8 +45,11 @@ export default class Project extends React.Component {
           <AddCollaborators addCollaborator={this.props.addCollaborator} users={this.state.users}/>
           <div className="collaborators-container">
             {this.props.selectedProject.users.map((user, i) => {
-              return <div key={i}>{user.firstname}</div>
+              return <Collaborator collaborator={user}/>
             })}
+            <div className="add-collab-btn">
+              <div className="collab-circle-grey"><i className="fa fa-plus"></i></div>
+            </div>
           </div>
         </div>
 

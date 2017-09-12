@@ -150,6 +150,54 @@
   width:100%;
 }
 
+.collaborators-container {
+  position:absolute;
+  right:60px;
+  top:20px;
+}
+
+.add-collab-btn {
+  position:absolute;
+  right:-20px;
+}
+
+
+.collab-container {
+  float:right;
+}
+
+.collab-circle-grey {
+  width:20px;
+  height:20px;
+  text-align:center;
+  margin-left:10px;
+  color:#b7bfc6;
+  border:1px solid #b7bfc6;
+  display:inline-block;
+  border-radius:50%;
+}
+
+.collab-circle-grey:hover {
+  color:#32c1ff;
+  box-shadow:0 0 0 3px #32c1ff;
+  border:1px solid transparent;
+}
+
+.collab-circle {
+  width:20px;
+  height:20px;
+  text-align:center;
+  margin-left:10px;
+  color:#32c1ff;
+  box-shadow:0 0 0 3px #32c1ff;
+  display:inline-block;
+  border-radius:50%;
+}
+
+.submit-list {
+  position:relative;
+}
+
 #submit-project-form {
   padding-left:14px;
   margin-top:20px;
