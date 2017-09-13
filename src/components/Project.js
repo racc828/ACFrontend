@@ -6,6 +6,7 @@ import EditProject from './EditProject'
 import AddCollaborators from './AddCollaborators'
 import UsersAdapter from '../adapters/UsersAdapter'
 import ProjectsAdapter from '../adapters/ProjectsAdapter'
+import TasksAdapter from '../adapters/TasksAdapter'
 
 export default class Project extends React.Component {
 
@@ -13,7 +14,8 @@ export default class Project extends React.Component {
     super(props)
     this.state = {
       showEditProjet: false,
-      users: []
+      users: [],
+      showAddCollaborators: false
     }
   }
 
@@ -26,8 +28,9 @@ export default class Project extends React.Component {
   }
 
 
-
   showEditProject = () => this.setState({showEditProject: !this.state.showEditProject})
+
+  showAddCollaborators = () => this.setState({showAddCollaborators: !this.state.showAddCollaborators})
 
 
   render(){
@@ -42,22 +45,24 @@ export default class Project extends React.Component {
 
         <div className="submit-list">
           <SubmitList createList={this.props.createList} selectedProject={this.props.selectedProject} editProject={this.props.editProject} />
-          <AddCollaborators addCollaborator={this.props.addCollaborator} users={this.state.users}/>
+          {this.state.showAddCollaborators ? <AddCollaborators addCollaborator={this.props.addCollaborator} users={this.state.users}/>: null }
           <div className="collaborators-container">
             {this.props.selectedProject.users.map((user, i) => {
-              return <Collaborator collaborator={user}/>
+              return <Collaborator collaborator={user} key={i}/>
             })}
-            <div className="add-collab-btn">
+            <div className="add-collab-btn" onClick={this.showAddCollaborators}>
               <div className="collab-circle-grey"><i className="fa fa-plus"></i></div>
             </div>
           </div>
         </div>
 
         <div className="list-container">
+
           {this.props.selectedProject.lists.map((list, i) => {
-            return <List list={list} key={i} deleteList={this.props.deleteList} editList={this.props.editList} />
+            return <List list={list} key={i} deleteList={this.props.deleteList} editList={this.props.editList} projectUsers={this.props.selectedProject.users} />
           })}
         </div>
+
 
       </div>
     )

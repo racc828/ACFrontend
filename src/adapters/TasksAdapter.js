@@ -40,6 +40,18 @@ export default class TasksAdapter {
       .then( resp => resp.json())
     }
 
+    static addUser(userId, taskId) {
+      return fetch('http://localhost:3000/api/v1/tasks/add_user',{
+        method: 'POST',
+        headers: headers(),
+        body: JSON.stringify({
+          id: taskId,
+          user_id: userId
+        })
+      })
+        .then( resp => resp.json())
+      }
+
   static deleteTask(taskId) {
     return fetch(`http://localhost:3000/api/v1/tasks/${taskId}`, {
         method: 'DELETE',
@@ -49,6 +61,14 @@ export default class TasksAdapter {
         })
       })
       .then( resp => resp.json())
+    }
+
+    static getTask(taskId) {
+      debugger
+      return fetch(path + "/" + taskId, {
+        headers: headers()
+      })
+      .then(resp => resp.json())
     }
 
   }

@@ -60,6 +60,7 @@ export default class List extends React.Component {
      })
   }
 
+
   deleteList = (e) => {
     e.preventDefault()
     let list = this.props.list.id
@@ -121,7 +122,7 @@ export default class List extends React.Component {
           </div>
           <div className="tasks-container">
             {this.state.tasks.map((task, i) => {
-              return <Task task={task} key={i} deleteTask={this.deleteTask} editTask={this.editTask} />
+              return <Task projectUsers={this.props.projectUsers}  task={task} key={i} deleteTask={this.deleteTask} editTask={this.editTask}   />
             })}
           </div>
         </div>

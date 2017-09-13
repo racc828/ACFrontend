@@ -15,7 +15,6 @@ export default class ProjectsAdapter {
 
 
   static addUserToProject(userId, projectId) {
-    debugger
     return fetch('http://localhost:3000/api/v1/projects/add_user',{
       method: 'POST',
       headers: headers(),
