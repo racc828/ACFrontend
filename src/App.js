@@ -81,6 +81,7 @@ class App extends Component {
   }
 
 
+
   render() {
     return (
       <div className="App">
@@ -89,7 +90,7 @@ class App extends Component {
               <Route exact path="/" render={this.renderLogin}/>
               <Route exact path="/signup" render={this.renderSignUp}/>
               <Route exact path="/home" render={this.renderBoard}/>
-              <Route exact path="/settings" render={this.settings}
+              <Route exact path="/settings" render={this.renderSettings}
               />
           </div>
         </div>

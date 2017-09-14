@@ -18,7 +18,7 @@ export default class LeftPanel extends React.Component {
   render() {
     return(
       <div id="left-panel-component">
-        {this.props.currentUser.firstname}
+        <span>{this.props.currentUser.firstname}</span>
         <button className="float-right add-project-btn circle-btn" onClick={this.showAddProject}>
           <i className="fa fa-plus"></i>
         </button>

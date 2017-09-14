@@ -1,7 +1,6 @@
 #right-panel-component {
   width:80%;
   float:left;
-  background:#f6fdff;
   height:900px;
 }
 
@@ -10,6 +9,23 @@
   background:#fff;
   border-bottom:1px solid #e0e6e8;
   padding:5px 0;
+}
+#edit-project-form input  {
+  font-size:2em;
+  border:none;
+  height:40px;
+
+}
+
+
+.list-component {
+  height:620px;
+  background:rgba(225,225,225, .8);
+  margin-left:10px;
+  display:inline-block;
+  padding-top:20px;
+  padding-bottom:10px;
+  overflow-y:auto;
 }
 
 .project-header {
@@ -20,32 +36,71 @@
   padding-bottom:15px;
 }
 
-.task-user {
-  background:pink;
+.task-user span {
+  text-transform: uppercase;
+  font-size:12px;
+}
+
+.add-user-task {
+  box-shadow:0 0 0 3px #fcbd01;
   display:inline-block;
+  border:none;
+  color:#fcbd01;
   border-radius:50%;
-  width:20px;
+  position:absolute;
+  background:transparent;
+  right:8px;
+  top:72px;
+  width:24px;
+  height:24px;
+  text-align:center;
+  transition:background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+  -webkit-transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+  outline:none;
+}
+.task-user {
+  box-shadow:0 0 0 3px #fcbd01;
+  display:inline-block;
+  color:#fff;
+  background:-webkit-linear-gradient(bottom left, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
+  border-radius:50%;
+  width:24px;
+  height:24px;
+  text-align:center;
+  margin-bottom:4px;
+  transition:background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+  -webkit-transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+}
+.add-user-task:hover,
+.task-user:hover {
+  background:-webkit-linear-gradient(bottom left, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
+  box-shadow:0 0 0 3px #fcbd01;
+  color:#fff;
+  border-color:transparent;
 }
 
-.modal {
-    position: fixed; /* Stay in place */
-    z-index: 900; /* Sit on top */
-    padding-top: 2%; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+button {
+  outline:none!important;
 }
 
-.modal-inner {
-  width:50%;
-  background:#fff;
-  height:500px;
-  margin:auto;
+.edit-project-btn {
+  border:none;
+  background:none;
+  padding-left:20px;
+}
 
+.edit-project-btn i {
+  margin-top:-20px;
+  font-size:1.4em;
+}
+
+.collab-container small {
+  color:#fff;
+}
+
+.task-users {
+  text-align:right;
+  padding-right:32px;
 }
 
 .list-component:hover {
@@ -60,6 +115,7 @@
 /* Side List Buttons  */
 .side-list-btn-container {
   position:relative;
+
 }
 
 .project-option-btn {
@@ -87,7 +143,8 @@
 .list-container {
   width:98%;
   margin:auto;
-  overflow-x:auto;
+  overflow-x:scroll;
+  height: 80vh;
 }
 
 .list-component {
@@ -108,11 +165,27 @@
   box-shadow:0 1px 3px 0 rgba(0,0,0,0.15);
 }
 
+.editing-task-options button:hover {
+  background:#796eff;
+  color:#fff!important;
+  cursor:pointer;
+}
+
 .add-task-btn:hover {
   box-shadow:0 0 0 2px #32c1ff;
 }
 .add-task-btn:hover i {
   color:#32c1ff;
+}
+
+.editing-task-options button {
+  border-color:transparent;
+  color:transparent;
+  background:transparent;
+  border-radius:50%;
+  margin-left:10px;
+  transition:background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+  -webkit-transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
 }
 
 .task-component {
@@ -123,11 +196,22 @@
   margin-top:10px;
   box-shadow:0 1px 3px 0 rgba(0,0,0,0.15);
   position:relative;
-  min-height:100px;
+  height:115px;
+  overflow-y:scroll;
+}
+
+
+.add-user-task:hover {
+  display:block;
 }
 
 .task-component:hover {
   box-shadow:0 5px 10px 0 rgba(0,0,0, 0.1)
+}
+
+.task-component:hover .editing-task-options button {
+  box-shadow:0 0 0 3px #847afb;
+  color:#796eff;
 }
 
 .editing-list-btns {
@@ -231,6 +315,10 @@
   position:relative;
 }
 
+#submit-list-form label {
+  color:#fff;
+}
+
 #submit-project-form {
   padding-left:14px;
   margin-top:20px;
@@ -242,7 +330,7 @@
 }
 
 .submit-list {
-  width:98%;
+  width:96%;
   margin:auto;
   padding:10px 0;
 }

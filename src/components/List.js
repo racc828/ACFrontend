@@ -65,7 +65,6 @@ export default class List extends React.Component {
     e.preventDefault()
     let list = this.props.list.id
     this.props.deleteList(list)
-
   }
 
   deleteTask = (task) => {
@@ -93,7 +92,7 @@ export default class List extends React.Component {
     return(
     <Draggable
         axis="x"
-        grid={[310, 310]}
+        grid={[320, 320]}
         onStop={this.handleStop}
         defaultPosition={{x: this.props.list.positionX, y: this.props.list.positionY,}}
         >

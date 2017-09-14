@@ -45,7 +45,7 @@ export default class Task extends React.Component {
     return(
       <Draggable
           axis="y"
-          grid={[110,110]}
+          grid={[125,125]}
           onStop={this.handleStop}
           defaultPosition={{x: this.props.task.positionX, y: this.props.task.positionY,}}
 
@@ -56,7 +56,8 @@ export default class Task extends React.Component {
             <small>{this.props.task.description}</small>
             <TaskUsers users={this.state.taskUsers}/>
             <button onClick={this.showAddUserToTask} className="add-user-task"><i className="fa fa-plus"></i></button>
-            {this.state.showAddUserToTask ? <ProjectUsersDropdown projectUsers={this.props.projectUsers} taskId={this.props.task.id}   addUserToTask={this.addUserToTask}/> :null }
+            {this.state.showAddUserToTask ? <ProjectUsersDropdown projectUsers={this.props.projectUsers}
+            showAddUserToTask={this.showAddUserToTask} taskId={this.props.task.id}   addUserToTask={this.addUserToTask}/> :null }
           </div>
           }
             <div className="editing-task-options">

@@ -21,6 +21,7 @@ export default class ProjectUsersDropdown extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    this.props.showAddUserToTask()
     this.props.addUserToTask(this.state.selectedUser, this.props.taskId )
   }
 
