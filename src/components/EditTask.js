@@ -32,7 +32,7 @@ export default class EditTask extends React.Component {
         <form onSubmit={this.handleSubmit} id="edit-task-form">
           <input type="text" name="name" onChange={this.handleChange} placeholder="Name" value={this.state.name} required autoFocus/>
           <input type="text" name="description" onChange={this.handleChange} placeholder="Description" value={this.state.description} required/>
-          <button className="btn submit-btn" type="submit">edit Task </button>
+          <button className="btn submit-btn" type="submit">Save </button>
         </form>
       </div>
     )

@@ -15,6 +15,19 @@
   color:#95e0ff;
 }
 
+.project-user-dropdown {
+  top:100px;
+  right:0;
+}
+
+#submit-project-form label {
+  color:#fff;
+}
+
+#submit-project-form input {
+  width:94%;
+}
+
 .project-options-component {
   margin-top:30px;
 }

@@ -45,7 +45,7 @@ export default class Task extends React.Component {
     return(
       <Draggable
           axis="y"
-          grid={[125,125]}
+          grid={[135,135]}
           onStop={this.handleStop}
           defaultPosition={{x: this.props.task.positionX, y: this.props.task.positionY,}}
 

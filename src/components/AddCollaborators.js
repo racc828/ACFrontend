@@ -25,7 +25,7 @@ export default class AddCollaborators extends React.Component {
   render(){
     return(
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="addCollaboratorDropdown">
           <select onChange={this.handleChange}>
             <option>Add a Collaborator</option>
             {this.props.users.map((user, i) => {
