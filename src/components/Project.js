@@ -58,7 +58,8 @@ export default class Project extends React.Component {
         <div className="list-container">
 
           {this.props.selectedProject.lists.map((list, i) => {
-            return <List list={list} key={i} deleteList={this.props.deleteList} editList={this.props.editList} projectUsers={this.props.selectedProject.users} />
+            return <List list={list} key={i} deleteList={this.props.deleteList} editList={this.props.editList}
+              projectId={this.props.selectedProject.id} projectUsers={this.props.selectedProject.users} />
           })}
         </div>
 

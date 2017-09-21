@@ -143,7 +143,7 @@ export default class Board extends React.Component {
     return(
       <div id="board-component">
         <LeftPanel currentUser={this.state.currentUser} projects={this.state.projects} createProject={this.createProject} deleteProject={this.deleteProject} getProject={this.getProject} />
-        <RightPanel deleteCollaborator={this.deleteCollaborator} addCollaborator={this.addCollaborator} currentUser={this.state.currentUser}  projects={this.state.projects} logOut={this.props.logOut} selectedProject={this.state.selectedProject} createList={this.createList} editList={this.editList} deleteList={this.deleteList} editProject={this.editProject} />
+        <RightPanel createProject={this.createProject} deleteCollaborator={this.deleteCollaborator} addCollaborator={this.addCollaborator} currentUser={this.state.currentUser}  projects={this.state.projects} logOut={this.props.logOut} selectedProject={this.state.selectedProject} createList={this.createList} editList={this.editList} deleteList={this.deleteList} editProject={this.editProject} />
       </div>
     )
   }

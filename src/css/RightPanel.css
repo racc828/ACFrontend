@@ -26,6 +26,49 @@
   overflow-y:auto;
 }
 
+.home-panel-main {
+  width:400px;
+  height:300px;
+  margin:auto;
+  margin-top:100px;
+  border:3px solid #fff;
+  border-radius:3px;
+  background:rgba(255,255,255, .4);
+}
+
+.home-panel-main-inner h2{
+  margin-top:10%;
+}
+
+.home-panel-main-inner i {
+  margin-top:50px;
+  height:70px;
+  width:70px;
+  color:#667eea;
+  border:3px solid #667eea;
+  transition:background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+  -webkit-transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+  border-radius:50%;
+  line-height:70px;
+  box-sizing: border-box;
+}
+
+.home-panel-main form {
+  margin-top:25%;
+}
+
+.home-panel-main div {
+  margin-top:10px;
+}
+
+.home-panel-main-inner i:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow:0 0 0 3px #7F66EA;
+  border-color:#7F66EA;
+  cursor:pointer;
+  color:#fff;
+}
+
 .project-header {
   box-shadow:0 1px 3px 0 rgba(0,0,0,0.15);
   background:#fff;
@@ -139,7 +182,25 @@ button {
   border-color:transparent;
 }
 
+.task-user-delete-hover {
+  position:absolute;
+  height:24px;
+  width:24px;
+  background:transparent;
+  border-radius:50%;
+}
 
+.task-user-delete-hover i {
+  color:transparent;
+}
+
+.task-user-delete-hover:hover i {
+  color:#fff;
+}
+
+.task-user-delete-hover:hover {
+  background:-webkit-linear-gradient(bottom left, #ff5263 0%, #ff7381 35%, #fcbd01 100%);
+}
 
 #submit-task-form input {
   border:none;
@@ -215,8 +276,6 @@ button {
 .list-container {
   width:98%;
   margin:auto;
-  overflow-x:scroll;
-  height: 80vh;
 }
 
 .list-component {

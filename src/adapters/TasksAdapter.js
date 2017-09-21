@@ -52,6 +52,18 @@ export default class TasksAdapter {
         .then( resp => resp.json())
       }
 
+      static deleteUser(userId, taskId) {
+        return fetch('http://localhost:3000/api/v1/tasks/delete_user',{
+          method: 'POST',
+          headers: headers(),
+          body: JSON.stringify({
+            task_id: taskId,
+            user_id: userId
+          })
+        })
+          .then( resp => resp.json())
+        }
+
   static deleteTask(taskId) {
     return fetch(`http://localhost:3000/api/v1/tasks/${taskId}`, {
         method: 'DELETE',

@@ -31,6 +31,15 @@ export default class Task extends React.Component {
     })
   }
 
+  deleteUserFromTask = (userId, taskId) => {
+    TasksAdapter.deleteUser(userId, taskId)
+    .then((data) => {
+      this.setState({
+        taskUsers: data
+      })
+    })
+  }
+
   deleteTask = (e) => {
     e.preventDefault()
     this.props.deleteTask(this.props.task.id)
@@ -54,7 +63,7 @@ export default class Task extends React.Component {
           { this.state.showEditTask ?
             <EditTask showEditTask={this.showEditTask} name={this.props.task.name} description={this.props.task.description} id={this.props.task.id} editTask={this.props.editTask} /> : <div><p><b>{this.props.task.name}</b></p>
             <small>{this.props.task.description}</small>
-            <TaskUsers users={this.state.taskUsers}/>
+            <TaskUsers deleteUserFromTask={this.deleteUserFromTask} users={this.state.taskUsers} taskId={this.props.task.id}/>
             <button onClick={this.showAddUserToTask} className="add-user-task"><i className="fa fa-plus"></i></button>
             {this.state.showAddUserToTask ? <ProjectUsersDropdown projectUsers={this.props.projectUsers}
             showAddUserToTask={this.showAddUserToTask} taskId={this.props.task.id}   addUserToTask={this.addUserToTask}/> :null }

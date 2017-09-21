@@ -34,7 +34,7 @@ export default class ProjectUsersDropdown extends React.Component {
           <select onChange={this.handleChange}>
             <option>Assign to:</option>
             {this.props.projectUsers.map((user, i) => {
-              return <option value={user.id}>{user.firstname}</option>
+              return <option value={user.id} key={i}>{user.firstname}</option>
             })}
           </select>
           <input type="submit" value="save"/>
