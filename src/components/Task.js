@@ -12,9 +12,22 @@ export default class Task extends React.Component {
     this.state = {
       showEditTask: false,
       showAddUserToTask:false,
-      taskUsers:this.props.task.users
+      taskUsers: []
     }
   }
+
+  componentDidMount() {
+    this.setState({
+      taskUsers: this.props.task.users
+    })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      taskUsers: nextProps.task.users
+    })
+  }
+
 
   handleStop = (e, ui) => {
     if (ui.deltaX !== 0) {
@@ -22,8 +35,8 @@ export default class Task extends React.Component {
     }
   }
 
-  addUserToTask = (selectedUser, taskId) => {
-    TasksAdapter.addUser(selectedUser,taskId)
+  addUserToTask = (selectedUser) => {
+    TasksAdapter.addUser(selectedUser, this.props.task.id)
     .then((data) => {
       this.setState({
         taskUsers: [...this.state.taskUsers, data]
@@ -31,8 +44,8 @@ export default class Task extends React.Component {
     })
   }
 
-  deleteUserFromTask = (userId, taskId) => {
-    TasksAdapter.deleteUser(userId, taskId)
+  deleteUserFromTask = (userId) => {
+    TasksAdapter.deleteUser(userId, this.props.task.id)
     .then((data) => {
       this.setState({
         taskUsers: data
@@ -63,10 +76,10 @@ export default class Task extends React.Component {
           { this.state.showEditTask ?
             <EditTask showEditTask={this.showEditTask} name={this.props.task.name} description={this.props.task.description} id={this.props.task.id} editTask={this.props.editTask} /> : <div><p><b>{this.props.task.name}</b></p>
             <small>{this.props.task.description}</small>
-            <TaskUsers deleteUserFromTask={this.deleteUserFromTask} users={this.state.taskUsers} taskId={this.props.task.id}/>
+            <TaskUsers deleteUserFromTask={this.deleteUserFromTask} users={this.state.taskUsers} />
             <button onClick={this.showAddUserToTask} className="add-user-task"><i className="fa fa-plus"></i></button>
             {this.state.showAddUserToTask ? <ProjectUsersDropdown projectUsers={this.props.projectUsers}
-            showAddUserToTask={this.showAddUserToTask} taskId={this.props.task.id}   addUserToTask={this.addUserToTask}/> :null }
+            showAddUserToTask={this.showAddUserToTask} addUserToTask={this.addUserToTask} /> :null }
           </div>
           }
             <div className="editing-task-options">

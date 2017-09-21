@@ -5,7 +5,7 @@ export default class TaskUser extends React.Component {
 
 
 handleDelete = () => {
-  this.props.deleteUserFromTask(this.props.user.id, this.props.taskId)
+  this.props.deleteUserFromTask(this.props.user.id)
 }
 
 

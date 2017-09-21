@@ -6,7 +6,7 @@ export default class TaskUsers extends React.Component {
     return(
       <div className="task-users">
         {this.props.users.map((user, i) => {
-          return <TaskUser deleteUserFromTask={this.props.deleteUserFromTask} taskId={this.props.taskId} user={user} key={i} />
+          return <TaskUser deleteUserFromTask={this.props.deleteUserFromTask} user={user} key={i} />
         })}
       </div>
     )
