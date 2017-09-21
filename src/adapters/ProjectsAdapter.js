@@ -26,6 +26,18 @@ export default class ProjectsAdapter {
     .then( resp => resp.json())
   }
 
+  static deleteUserFromProject(userId, projectId) {
+    return fetch('http://localhost:3000/api/v1/projects/delete_user',{
+      method: 'POST',
+      headers: headers(),
+      body: JSON.stringify({
+        project_id: projectId,
+        user_id: userId
+      })
+    })
+    .then( resp => resp.json())
+  }
+
   static getProjects(currentUser) {
     return fetch(path, {
       headers: headers()

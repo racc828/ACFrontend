@@ -27,7 +27,6 @@ export default class Project extends React.Component {
     })
   }
 
-
   showEditProject = () => this.setState({showEditProject: !this.state.showEditProject})
 
   showAddCollaborators = () => this.setState({showAddCollaborators: !this.state.showAddCollaborators})
@@ -48,7 +47,7 @@ export default class Project extends React.Component {
           {this.state.showAddCollaborators ? <AddCollaborators addCollaborator={this.props.addCollaborator} users={this.state.users}/>: null }
           <div className="collaborators-container">
             {this.props.selectedProject.users.map((user, i) => {
-              return <Collaborator collaborator={user} key={i}/>
+              return <Collaborator collaborator={user} deleteCollaborator={this.props.deleteCollaborator} key={i}/>
             })}
             <div className="add-collab-btn" onClick={this.showAddCollaborators}>
               <div className="collab-circle-grey"><i className="fa fa-plus"></i></div>

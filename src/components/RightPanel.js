@@ -15,7 +15,8 @@ export default class RightPanel extends React.Component {
           </div>
         </div>
         {this.props.selectedProject === null ? <RightPanelHome /> : <Project editList={this.props.editList}
-          addCollaborator={this.props.addCollaborator} createList={this.props.createList} deleteList={this.props.deleteList} selectedProject={this.props.selectedProject} editProject={this.props.editProject}/>}
+          addCollaborator={this.props.addCollaborator}
+          deleteCollaborator={this.props.deleteCollaborator} createList={this.props.createList} deleteList={this.props.deleteList} selectedProject={this.props.selectedProject} editProject={this.props.editProject}/>}
       </div>
     )
   }

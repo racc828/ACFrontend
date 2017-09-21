@@ -9,7 +9,6 @@ export default class AddCollaborators extends React.Component {
     }
   }
 
-
   handleChange = (e) => {
     let collaborator = parseInt(e.target.value)
     this.setState({
@@ -21,6 +20,7 @@ export default class AddCollaborators extends React.Component {
     e.preventDefault()
     this.props.addCollaborator(this.state.selectedCollaborator)
   }
+
 
   render(){
     return(

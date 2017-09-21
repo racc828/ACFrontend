@@ -5,8 +5,6 @@ import LeftPanel from './LeftPanel'
 import ProjectsAdapter from '../adapters/ProjectsAdapter'
 import ListsAdapter from '../adapters/ListsAdapter'
 
-
-
 export default class Board extends React.Component {
 
   constructor() {
@@ -114,6 +112,18 @@ export default class Board extends React.Component {
     })
   }
 
+  deleteCollaborator = (userId) => {
+    ProjectsAdapter.deleteUserFromProject(userId, this.state.selectedProject.id)
+    .then(users => {
+      this.setState({
+       selectedProject: {
+         ...this.state.selectedProject,
+         users: users
+       }
+     })
+    })
+  }
+
   deleteList = (list) => {
     ListsAdapter.deleteList(list)
     .then(data => {
@@ -133,7 +143,7 @@ export default class Board extends React.Component {
     return(
       <div id="board-component">
         <LeftPanel currentUser={this.state.currentUser} projects={this.state.projects} createProject={this.createProject} deleteProject={this.deleteProject} getProject={this.getProject} />
-        <RightPanel addCollaborator={this.addCollaborator} currentUser={this.state.currentUser}  projects={this.state.projects} logOut={this.props.logOut} selectedProject={this.state.selectedProject} createList={this.createList} editList={this.editList} deleteList={this.deleteList} editProject={this.editProject} />
+        <RightPanel deleteCollaborator={this.deleteCollaborator} addCollaborator={this.addCollaborator} currentUser={this.state.currentUser}  projects={this.state.projects} logOut={this.props.logOut} selectedProject={this.state.selectedProject} createList={this.createList} editList={this.editList} deleteList={this.deleteList} editProject={this.editProject} />
       </div>
     )
   }
