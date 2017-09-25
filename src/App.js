@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Login from './components/Login'
 import Board from './components/Board'
+import MyTasks from './components/MyTasks'
 import SessionsAdapter from './adapters/SessionsAdapter'
 import UsersAdapter from './adapters/UsersAdapter'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -80,7 +81,9 @@ class App extends Component {
     return <SignUp createUser={this.createUser} />
   }
 
-
+  renderMyTasks = () => {
+    return <MyTasks currentUser ={this.state.currentUser} />
+  }
 
   render() {
     return (
@@ -89,6 +92,7 @@ class App extends Component {
           <div>
               <Route exact path="/" render={this.renderLogin}/>
               <Route exact path="/signup" render={this.renderSignUp}/>
+              <Route exact path="/mytasks" render={this.renderMyTasks}/>
               <Route exact path="/home" render={this.renderBoard}/>
               <Route exact path="/settings" render={this.renderSettings}
               />

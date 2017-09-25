@@ -103,6 +103,7 @@ export default class Board extends React.Component {
   addCollaborator = (userId) => {
     ProjectsAdapter.addUserToProject(userId, this.state.selectedProject.id)
     .then(user => {
+      user.error ? alert("This user is already a collaborator") :
       this.setState({
        selectedProject: {
          ...this.state.selectedProject,

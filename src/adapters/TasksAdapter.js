@@ -75,8 +75,19 @@ export default class TasksAdapter {
       .then( resp => resp.json())
     }
 
-    static getTask(taskId) {
+    static getUserTasks(userId) {
       debugger
+      return fetch('http://localhost:3000/api/v1/tasks/get_tasks', {
+        method: 'post',
+        headers: headers(),
+        body: JSON.stringify({
+          user_id: userId
+        })
+      })
+      .then( resp => resp.json())
+    }
+
+    static getTask(taskId) {
       return fetch(path + "/" + taskId, {
         headers: headers()
       })

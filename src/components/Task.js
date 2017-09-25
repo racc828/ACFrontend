@@ -28,7 +28,6 @@ export default class Task extends React.Component {
     })
   }
 
-
   handleStop = (e, ui) => {
     if (ui.deltaX !== 0) {
       TasksAdapter.editTaskCoordinates(ui.lastX, ui.lastY, this.props.task.id )
@@ -38,6 +37,7 @@ export default class Task extends React.Component {
   addUserToTask = (selectedUser) => {
     TasksAdapter.addUser(selectedUser, this.props.task.id)
     .then((data) => {
+      data.error ? alert ("user has already been assigned this task") :
       this.setState({
         taskUsers: [...this.state.taskUsers, data]
       })
