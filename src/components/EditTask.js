@@ -19,6 +19,10 @@ export default class EditTask extends React.Component {
     })
   }
 
+  handleFocus = (e) => {
+    e.currentTarget.autofocus = true
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
     let task = this.state
@@ -29,9 +33,9 @@ export default class EditTask extends React.Component {
   render() {
     return(
       <div id="edit-task-component">
-        <form onSubmit={this.handleSubmit} id="edit-task-form">
-          <input type="text" name="name" onChange={this.handleChange} placeholder="Name" value={this.state.name} required autoFocus/>
-          <input type="text" name="description" onChange={this.handleChange} placeholder="Description" value={this.state.description} required/>
+        <form onSubmit={this.handleSubmit} id="edit-task-form" className="edit-task-form">
+          <input type="text" onClick={this.handleFocus} name="name" onChange={this.handleChange} placeholder="Name" value={this.state.name} required/>
+          <input type="text" onClick={this.handleFocus} name="description" onChange={this.handleChange} placeholder="Description" value={this.state.description} required />
           <button className="btn submit-btn" type="submit">Save </button>
         </form>
       </div>

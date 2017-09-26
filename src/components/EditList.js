@@ -17,6 +17,10 @@ export default class EditList extends React.Component {
     })
   }
 
+  handleFocus = (e) => {
+    e.currentTarget.focus()
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
     let list = this.state
@@ -27,9 +31,9 @@ export default class EditList extends React.Component {
 
   render() {
     return(
-      <div id="edit-list-component">
+      <div id="edit-list-component" className="edit-list-component">
         <form onSubmit={this.handleSubmit} id="edit-list-form">
-          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="List Name" required autoFocus/>
+          <input type="text" onClick={this.handleFocus} name="name" value={this.state.name} onChange={this.handleChange} placeholder="List Name" required autoFocus/>
           <button className="btn submit-btn" type="submit">Edit List Name </button>
         </form>
       </div>

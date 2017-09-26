@@ -23,7 +23,6 @@
   display:inline-block;
   padding-top:20px;
   padding-bottom:10px;
-  overflow-y:auto;
 }
 
 .home-panel-main {
@@ -52,6 +51,8 @@
   line-height:70px;
   box-sizing: border-box;
 }
+
+
 
 .home-panel-main form {
   margin-top:25%;

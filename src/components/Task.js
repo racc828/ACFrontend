@@ -70,9 +70,8 @@ export default class Task extends React.Component {
           grid={[135,135]}
           onStop={this.handleStop}
           defaultPosition={{x: this.props.task.positionX, y: this.props.task.positionY,}}
-
           >
-          <div className="task-component" >
+          <div className="task-component">
           { this.state.showEditTask ?
             <EditTask showEditTask={this.showEditTask} name={this.props.task.name} description={this.props.task.description} id={this.props.task.id} editTask={this.props.editTask} /> : <div><p><b>{this.props.task.name}</b></p>
             <small>{this.props.task.description}</small>

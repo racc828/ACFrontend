@@ -65,6 +65,9 @@ export default class List extends React.Component {
     e.preventDefault()
     let list = this.props.list.id
     this.props.deleteList(list)
+    this.setState({
+      editingDropdown:false
+    })
   }
 
   deleteTask = (task) => {
