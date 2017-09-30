@@ -29,7 +29,8 @@ export default class Task extends React.Component {
   }
 
   handleStop = (e, ui) => {
-    if (ui.deltaX !== 0) {
+    if (ui.deltaY !== 0) {
+      debugger
       TasksAdapter.editTaskCoordinates(ui.lastX, ui.lastY, this.props.task.id )
     }
   }

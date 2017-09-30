@@ -19,6 +19,7 @@ export default class AddCollaborators extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.addCollaborator(this.state.selectedCollaborator)
+    this.props.showAddCollaborators()
   }
 
 

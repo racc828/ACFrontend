@@ -21,8 +21,9 @@
   background:rgba(225,225,225, .8);
   margin-left:10px;
   display:inline-block;
-  padding-top:20px;
-  padding-bottom:10px;
+  padding: 20px 5px 10px 5px;
+  width:300px;
+  white-space: normal;
 }
 
 .home-panel-main {
@@ -277,12 +278,19 @@ button {
 .list-container {
   width:98%;
   margin:auto;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
-.list-component {
-  width:300px;
-  float:left;
-  padding:5px;
+.submit-task-container, .tasks-container {
+  float: left;
+}
+
+.tasks-container {
+  float: left;
+  overflow-y: auto;
+  width: 100%;
+  height: 565px;
 }
 
 .add-task-btn {
@@ -361,10 +369,27 @@ button {
 }
 
 .right-chevron {
-  float:right;
   font-size:.6em!important;
   padding-right:10px;
+  position:absolute;
+  top:0;
+  right:0;
   color:#848f99;
+}
+
+.edit-list-component form input {
+  background:transparent;
+  border-left:none;
+  border-right:none;
+  border-top:none;
+}
+
+.edit-list-component {
+  margin-top: -8px;
+}
+
+.edit-list-component form button {
+  margin-top:0;
 }
 
 .dropdown-button-btn-container {

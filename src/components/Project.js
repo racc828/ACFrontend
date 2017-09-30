@@ -44,7 +44,7 @@ export default class Project extends React.Component {
 
         <div className="submit-list">
           <SubmitList createList={this.props.createList} selectedProject={this.props.selectedProject} editProject={this.props.editProject} />
-          {this.state.showAddCollaborators ? <AddCollaborators addCollaborator={this.props.addCollaborator} users={this.state.users}/>: null }
+          {this.state.showAddCollaborators ? <AddCollaborators addCollaborator={this.props.addCollaborator} showAddCollaborators={this.showAddCollaborators} users={this.state.users}/>: null }
           <div className="collaborators-container">
             {this.props.selectedProject.users.map((user, i) => {
               return <Collaborator collaborator={user} deleteCollaborator={this.props.deleteCollaborator} key={i}/>

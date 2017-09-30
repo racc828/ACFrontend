@@ -93,19 +93,19 @@ export default class List extends React.Component {
 
   render() {
     return(
-    <Draggable
-        axis="x"
-        grid={[320, 320]}
-        onStop={this.handleStop}
-        defaultPosition={{x: this.props.list.positionX, y: this.props.list.positionY,}}
-        >
+    // <Draggable
+    //     axis="x"
+    //     grid={[320, 320]}
+    //     onStop={this.handleStop}
+    //     defaultPosition={{x: this.props.list.positionX, y: this.props.list.positionY,}}
+    //     >
         <div className="list-component">
           <div className="editing-list-btns">
               <div className="dropdown-btn-container">
-                <h3 className="list-title">{this.props.list.name} <i className="fa fa-chevron-down right-chevron" onClick={this.editingDropdown}></i></h3>
-              </div>
-              <div>{this.state.showEditList ?
-                <div><EditList name={this.props.list.name} editList={this.props.editList} id={this.props.list.id} showEditList={this.showEditList} editingDropdowninEditList={this.editingDropdowninEditList} /></div> : null}
+                <div>{this.state.showEditList ?
+                  <div><EditList name={this.props.list.name} editList={this.props.editList} id={this.props.list.id} showEditList={this.showEditList} editingDropdowninEditList={this.editingDropdowninEditList} /></div> : <h3 className="list-title">{this.props.list.name}</h3> }
+                </div>
+               <i className="fa fa-chevron-down right-chevron" onClick={this.editingDropdown}></i>
               </div>
               <div>{this.state.editingDropdown ?
                   <div className="dropdown-button-btn-container"><button className="dropdown-button-btn" onClick={this.deleteList}>
@@ -128,7 +128,7 @@ export default class List extends React.Component {
             })}
           </div>
         </div>
-      </Draggable>
+      // </Draggable>
     )
   }
 }
