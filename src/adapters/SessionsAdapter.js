@@ -1,4 +1,4 @@
-const path = 'http://localhost:3000/api/v1/sessions'
+const path = 'https://asana-clone-1.herokuapp.com'
 export default class SessionsAdapter {
 
   static getUser(user){

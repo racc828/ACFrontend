@@ -1,4 +1,4 @@
-const path = 'http://localhost:3000/api/v1/projects'
+const path = 'https://asana-clone-1.herokuapp.com/api/v1/projects'
 export default class ProjectsAdapter {
 
   static createProject(project, currentUser) {
@@ -15,7 +15,7 @@ export default class ProjectsAdapter {
 
 
   static addUserToProject(userId, projectId) {
-    return fetch('http://localhost:3000/api/v1/projects/add_user',{
+    return fetch('https://asana-clone-1.herokuapp.com/api/v1/projects/add_user',{
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -27,7 +27,7 @@ export default class ProjectsAdapter {
   }
 
   static deleteUserFromProject(userId, projectId) {
-    return fetch('http://localhost:3000/api/v1/projects/delete_user',{
+    return fetch('https://asana-clone-1.herokuapp.com/api/v1/projects/delete_user',{
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -53,7 +53,7 @@ export default class ProjectsAdapter {
   }
 
     static editProject(project) {
-    return fetch(`http://localhost:3000/api/v1/projects/${project.projectId}`, {
+    return fetch(`https://asana-clone-1.herokuapp.com/api/v1/projects/${project.projectId}`, {
       method: 'PATCH',
       headers:headers(),
       body: JSON.stringify({
@@ -64,7 +64,7 @@ export default class ProjectsAdapter {
     }
 
     static deleteProject(projectId) {
-      return fetch(`http://localhost:3000/api/v1/projects/${projectId}`, {
+      return fetch(`https://asana-clone-1.herokuapp.com/api/v1/projects/${projectId}`, {
         method: 'DELETE',
         headers: headers(),
         body: JSON.stringify({

@@ -1,4 +1,4 @@
-const path = 'http://localhost:3000/api/v1/users'
+const path = 'https://asana-clone-1.herokuapp.com/api/v1/users'
 
 export default class UsersAdapter {
 

@@ -1,4 +1,4 @@
-const path = 'http://localhost:3000/api/v1/tasks'
+const path = 'https://asana-clone-1.herokuapp.com/api/v1/tasks'
 export default class TasksAdapter {
 
   static createTask(newTask, listId) {
@@ -18,7 +18,7 @@ export default class TasksAdapter {
   }
 
   static editTaskCoordinates(positionX, positionY, taskId) {
-    return fetch(`http://localhost:3000/api/v1/tasks/${taskId}`, {
+    return fetch(`https://asana-clone-1.herokuapp.com/api/v1/tasks/${taskId}`, {
       method: 'PATCH',
       headers:headers(),
       body: JSON.stringify({
@@ -29,7 +29,7 @@ export default class TasksAdapter {
   }
 
     static editTask(task) {
-      return fetch(`http://localhost:3000/api/v1/tasks/${task.id}`, {
+      return fetch(`https://asana-clone-1.herokuapp.com/api/v1/tasks/${task.id}`, {
         method: 'PATCH',
         headers:headers(),
         body: JSON.stringify({
@@ -41,7 +41,7 @@ export default class TasksAdapter {
     }
 
     static addUser(userId, taskId) {
-      return fetch('http://localhost:3000/api/v1/tasks/add_user',{
+      return fetch('https://asana-clone-1.herokuapp.com/api/v1/tasks/add_user',{
         method: 'POST',
         headers: headers(),
         body: JSON.stringify({
@@ -53,7 +53,7 @@ export default class TasksAdapter {
       }
 
       static deleteUser(userId, taskId) {
-        return fetch('http://localhost:3000/api/v1/tasks/delete_user',{
+        return fetch('https://asana-clone-1.herokuapp.com/api/v1/tasks/delete_user',{
           method: 'POST',
           headers: headers(),
           body: JSON.stringify({
@@ -65,7 +65,7 @@ export default class TasksAdapter {
         }
 
   static deleteTask(taskId) {
-    return fetch(`http://localhost:3000/api/v1/tasks/${taskId}`, {
+    return fetch(`https://asana-clone-1.herokuapp.com/api/v1/tasks/${taskId}`, {
         method: 'DELETE',
         headers: headers(),
         body: JSON.stringify({
@@ -85,7 +85,7 @@ export default class TasksAdapter {
 
     static getUserTasks(userId) {
       debugger
-      return fetch('http://localhost:3000/api/v1/tasks/get_tasks', {
+      return fetch('https://asana-clone-1.herokuapp.com/api/v1/tasks/get_tasks', {
         method: 'post',
         headers: headers(),
         body: JSON.stringify({
