@@ -28,12 +28,12 @@ export default class Task extends React.Component {
     })
   }
 
-  handleStop = (e, ui) => {
-    if (ui.deltaY !== 0) {
-      debugger
-      TasksAdapter.editTaskCoordinates(ui.lastX, ui.lastY, this.props.task.id )
-    }
-  }
+  // handleStop = (e, ui) => {
+  //   if (ui.deltaY !== 0) {
+  //     debugger
+  //     TasksAdapter.editTaskCoordinates(ui.lastX, ui.lastY, this.props.task.id )
+  //   }
+  // }
 
   addUserToTask = (selectedUser) => {
     TasksAdapter.addUser(selectedUser, this.props.task.id)
@@ -66,12 +66,12 @@ export default class Task extends React.Component {
 
   render() {
     return(
-      <Draggable
-          axis="y"
-          grid={[135,135]}
-          onStop={this.handleStop}
-          defaultPosition={{x: this.props.task.positionX, y: this.props.task.positionY,}}
-          >
+      // <Draggable
+      //     axis="y"
+      //     grid={[135,135]}
+      //     onStop={this.handleStop}
+      //     defaultPosition={{x: this.props.task.positionX, y: this.props.task.positionY,}}
+      //     >
           <div className="task-component">
           { this.state.showEditTask ?
             <EditTask showEditTask={this.showEditTask} name={this.props.task.name} description={this.props.task.description} id={this.props.task.id} editTask={this.props.editTask} /> : <div><p><b>{this.props.task.name}</b></p>
@@ -91,7 +91,7 @@ export default class Task extends React.Component {
               </button>
             </div>
           </div>
-    </Draggable>
+    // </Draggable>
     )
   }
 

@@ -75,6 +75,14 @@ export default class TasksAdapter {
       .then( resp => resp.json())
     }
 
+
+    static getTask(taskId) {
+      return fetch(path + "/" + taskId, {
+        headers: headers()
+      })
+      .then(resp => resp.json())
+    }
+
     static getUserTasks(userId) {
       debugger
       return fetch('http://localhost:3000/api/v1/tasks/get_tasks', {
@@ -85,13 +93,6 @@ export default class TasksAdapter {
         })
       })
       .then( resp => resp.json())
-    }
-
-    static getTask(taskId) {
-      return fetch(path + "/" + taskId, {
-        headers: headers()
-      })
-      .then(resp => resp.json())
     }
 
   }

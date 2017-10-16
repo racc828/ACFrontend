@@ -85,11 +85,11 @@ export default class List extends React.Component {
 
   showAddTask = () => this.setState({showAddTask: !this.state.showAddTask})
 
-  handleStop = (e, ui) => {
-    if (ui.deltaX !== 0) {
-      ListsAdapter.editListCoordinates(ui.lastX, ui.lastY, this.props.list.id )
-    }
-  }
+  // handleStop = (e, ui) => {
+  //   if (ui.deltaX !== 0) {
+  //     ListsAdapter.editListCoordinates(ui.lastX, ui.lastY, this.props.list.id )
+  //   }
+  // }
 
   render() {
     return(

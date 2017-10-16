@@ -29,8 +29,10 @@ export default class MyTasks extends React.Component {
   render(){
     debugger
     return(
-      <div>
-        <Link to="/home">Home</Link>
+      <div className="container">
+        <div className="top-user-tasks-header">
+          <Link to="/home">Home</Link>
+        </div>
         {this.state.myTasks.map((task, i) => {
         return <AllUserTasks task={task} key={i} />
         })}

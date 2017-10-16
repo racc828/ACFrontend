@@ -10,6 +10,19 @@
   border-bottom:1px solid #e0e6e8;
   padding:5px 0;
 }
+
+
+.right-panel-header a {
+  float:right;
+  margin-top:10px;
+  text-decoration: none;
+  color:#14aaf5;
+}
+
+.right-panel-header a:hover {
+  border-bottom:1px solid #14aaf5;
+}
+
 #edit-project-form input  {
   font-size:2em;
   border:none;
@@ -342,7 +355,6 @@ button {
   padding:2px 10px;
   background:#fff;
   border-radius:3px;
-  box-sizing: border-box;
   margin-top:10px;
   box-shadow:0 1px 3px 0 rgba(0,0,0,0.15);
   position:relative;
@@ -427,6 +439,7 @@ button {
 .editing-task-options {
   position:absolute;
   right:5px;
+  z-index:9000;
   top:10px;
 }
 
